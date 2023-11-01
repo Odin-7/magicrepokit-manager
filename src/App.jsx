@@ -1,5 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Routes, Route, useNavigate, Navigate } from 'react-router-dom';
+import {
+  Routes,
+  Route,
+  useNavigate,
+  Navigate,
+  Redirect,
+} from 'react-router-dom';
 
 import AdminLayout from '@/layouts/admin';
 import AuthLayout from '@/layouts/auth';
@@ -42,9 +48,9 @@ function App() {
       }}
     >
       <Routes>
-        <Route path="auth/*" element={<AuthLayout />} />
-        <Route path="admin/*" element={<AdminLayout />} />
-        <Route path="fail/*" element={<FailLayout />} />
+        <Route path="/auth/*" element={<AuthLayout />} />
+        <Route path="/admin/*" element={<AdminLayout />} />
+        <Route path="/fail/*" element={<FailLayout />} />
         <Route path="/" element={<Navigate to="/admin" replace />} />
       </Routes>
       <FloatButton
